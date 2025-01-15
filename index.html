@@ -91,6 +91,17 @@
     <input type="file" id="rom" accept=".sfc">
   </div>
 
+  <!-- Dropdown -->
+  <div>
+    <h1>Select a Patch</h1>
+      <select id="patchDropdown">
+          <option value="" disabled selected>Select a patch...</option>
+      </select>
+      <button id="applyPatch">Apply Patch</button>
+  </div>
+
+  <script src="patch-selector.js"></script>
+
   <!-- Initial IPS Upload Inputs -->
   <div id="ips-uploads">
     <div class="file-upload">
@@ -244,6 +255,47 @@
     }
 
     throw new Error("Invalid IPS file: Missing footer.");
+      // Mockup: Replace this w a directory reading method
+    function fetchPatches() {
+        // Simulate patch filenames
+        return [
+            "1-UltimaPlus-Luna.ips",
+            "2-UltimaPlus-Mercury.ips",
+            "3-UltimaPlus-Venus.ips",
+            "4-UltimaPlus-Mars.ips",
+            "5-UltimaPlus-Ceres.ips",
+            "6-UltimaPlus-Jupiter.ips",
+            "7-UltimaPlus-Saturn.ips",
+            "8-UltimaPlus-Uranus.ips",
+            "9-UltimaPlus-Neptune.ips",
+            "X-UltimaPlus-Pluto.ips"
+        ];
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const patchDropdown = document.getElementById("patchDropdown");
+        const patches = fetchPatches(); // Fetches patch list
+
+        // Populatees dropdown menu with patch options
+        patches.forEach(patch => {
+            const option = document.createElement("option");
+            option.value = patch;
+            option.textContent = patch;
+            patchDropdown.appendChild(option);
+        });
+
+        // Adds event listener for the "Apply Patch" button
+        document.getElementById("applyPatch").addEventListener("click", () => {
+            const selectedPatch = patchDropdown.value;
+            if (selectedPatch) {
+                alert(`Applying patch: ${selectedPatch}`);
+                // Logic to apply the selected patch goes here; see above
+            } else {
+                alert("Please select a patch to apply!");
+            }
+        });
+    });
+ 
     }
   </script>
 </body>
