@@ -73,9 +73,11 @@
     50%{background-position:91% 100%}
     100%{background-position:10% 0%}
 }
-
-
   </style>
+  <!-- for unzipping GitHub archives -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+
 </head>
 <body id="gradient">
   <h1>Browser-Based ROM Patcher</h1>
@@ -295,7 +297,61 @@
             }
         });
     });
- 
+
+    // fetching the zipfile from GitHub
+    document.addEventListener("DOMContentLoaded", async () => {
+    const patchDropdown = document.getElementById("patchDropdown");
+
+    async function fetchAndUnzipGitHubRepo() {
+        const zipUrl = 'https://github.com/jacksmedia/Ultima-Plus-Patchapp/blob/37a0f8c5b595c0c5c74259c885c9ef1b13e8784c/Final%20Fantasy%204%20Ultima%20Plus%20patch%20archive.zip'; // Replace with your repo's ZIP URL
+       // https://github.com/jacksmedia/Ultima-Plus-Patchapp/blob/main/Final%20Fantasy%204%20Ultima%20Plus%20patch%20archive.zip
+       // https://github.com/jacksmedia/Ultima-Plus-Patchapp/blob/37a0f8c5b595c0c5c74259c885c9ef1b13e8784c/Final%20Fantasy%204%20Ultima%20Plus%20patch%20archive.zip
+       try {
+            // Fetch ZIP file
+            const response = await fetch(zipUrl);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ZIP file: ${response.statusText}`);
+            }
+
+            const zipBlob = await response.blob();
+            const zip = await JSZip.loadAsync(zipBlob);
+
+            // Filter and extract files from a specific directory, e.g., "patches/"
+            const patchFiles = [];
+            zip.forEach((relativePath, file) => {
+                if (relativePath.startsWith("repository-name-main/patches/") && !file.dir) {
+                    patchFiles.push(relativePath.split('/').pop()); // Get the filename only
+                }
+            });
+
+            // Populate the dropdown
+            patchFiles.forEach(file => {
+                const option = document.createElement("option");
+                option.value = file;
+                option.textContent = file;
+                patchDropdown.appendChild(option);
+            });
+        } catch (error) {
+            console.error("Error fetching or unzipping:", error);
+            alert("Failed to load patches. Please try again later.");
+        }
+    }
+
+    // Fetch and unzip the repo
+    await fetchAndUnzipGitHubRepo();
+
+    // Add event listener for the "Apply Patch" button
+    document.getElementById("applyPatch").addEventListener("click", () => {
+        const selectedPatch = patchDropdown.value;
+        if (selectedPatch) {
+            alert(`Applying patch: ${selectedPatch}`);
+            // Add logic to apply the selected patch here
+        } else {
+            alert("Please select a patch to apply!");
+        }
+    });
+});
+
     }
   </script>
 </body>
