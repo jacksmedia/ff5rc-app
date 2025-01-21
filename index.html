@@ -80,12 +80,11 @@
 
 </head>
 <body id="gradient">
-  <h1>Browser-Based ROM Patcher</h1>
-  <h2>
+  <h1>FF5r Clean Patcher</h1>
+  <h3>
     by xJ4cks & ChatGPT4
-  </h2>
-  <p>Upload your ROM and multiple IPS patches to create a patched ROM.</p>
-  <p>No servers are required, and future versions of this app will offer curated lists of patches.</p>
+  </h3>
+  <p>Upload your FFVJ ROM and multiple IPS patches to create a patched ROM.</p>
 
   <!-- ROM Upload -->
   <div class="file-upload">
@@ -95,107 +94,15 @@
 
 
    <!-- test dropdown of patches -->
-   <h1>Select a Patch</h1>
+   <h2>Choose the Features</h2>
    <select id="patch-dropdown">
        <option value="" disabled selected>Select a patch</option>
    </select>    
 
     <button id="applyPatch">Apply Patch</button>
 
-  <!-- Initial IPS Upload Inputs -->
-  <div id="ips-uploads">
-    <div class="file-upload">
-      <label for="ips1">IPS Patch File 1:</label>
-      <input type="file" id="ips1" accept=".ips">
-    </div>
-    <div class="file-upload">
-      <label for="ips2">IPS Patch File 2:</label>
-      <input type="file" id="ips2" accept=".ips">
-    </div>
-    <div class="file-upload">
-      <label for="ips3">IPS Patch File 3:</label>
-      <input type="file" id="ips3" accept=".ips">
-    </div>
-    <div class="file-upload">
-      <label for="ips4">IPS Patch File 4:</label>
-      <input type="file" id="ips4" accept=".ips">
-    </div>
-  </div>
-
-  <!-- Button to Add More Uploads -->
-  <button id="add-upload">Another Upload? Click me!</button>
-  <br><br>
-
-  <!-- Patch Button -->
-  <button id="patch">Apply Patches<br/>and Download</button>
-
-  <!-- Manifest and Download -->
-  <div id="manifest"></div>
 
   <script>
-    let uploadCount = 4; // Initial number of IPS upload fields
-
-    // Add another upload field
-    document.getElementById("add-upload").addEventListener("click", () => {
-      uploadCount++;
-      const div = document.createElement("div");
-      div.className = "file-upload";
-      div.innerHTML = `
-        <label for="ips${uploadCount}">IPS Patch File ${uploadCount}:</label>
-        <input type="file" id="ips${uploadCount}" accept=".ips">
-      `;
-      document.getElementById("ips-uploads").appendChild(div);
-    });
-
-    document.getElementById("patch").addEventListener("click", async () => {
-      const romFile = document.getElementById("rom").files[0];
-      if (!romFile) {
-        alert("Please upload a ROM file.");
-        return;
-      }
-
-      // Gather all IPS files
-      const ipsFiles = [];
-      for (let i = 1; i <= uploadCount; i++) {
-        const fileInput = document.getElementById(`ips${i}`);
-        if (fileInput && fileInput.files[0]) {
-          ipsFiles.push(fileInput.files[0]);
-        }
-      }
-
-      if (ipsFiles.length === 0) {
-        alert("Please upload at least one IPS file.");
-        return;
-      }
-
-      // Read ROM file
-      let romData = new Uint8Array(await romFile.arrayBuffer());
-      const manifest = [];
-
-      // Apply each IPS file sequentially
-      for (const ipsFile of ipsFiles) {
-        const ipsData = new Uint8Array(await ipsFile.arrayBuffer());
-        manifest.push(ipsFile.name);
-
-        // Apply patch and update the working copy
-        romData = applyIpsPatch(romData, ipsData);
-      }
-
-      // Display the manifest
-      document.getElementById("manifest").innerText = `Manifest:\n${manifest.join("\n")}`;
-
-      // Trigger the download for the patched ROM
-      const blob = new Blob([romData], { type: "application/octet-stream" });
-      const url = URL.createObjectURL(blob);
-      const downloadLink = document.createElement("a");
-      downloadLink.href = url;
-      downloadLink.download = "patched-rom.sfc";
-      downloadLink.textContent = "Download Patched ROM";
-      downloadLink.style.display = "block";
-
-      // Append the download link below the manifest
-      document.getElementById("manifest").appendChild(downloadLink);
-    });
 
     function applyIpsPatch(romData, ipsData) {
     const IPS_HEADER = "PATCH";
@@ -259,16 +166,11 @@
     function fetchPatches() {
         // Simulate patch filenames
         return [
-            "1-UltimaPlus-Luna.ips",
-            "2-UltimaPlus-Mercury.ips",
-            "3-UltimaPlus-Venus.ips",
-            "4-UltimaPlus-Mars.ips",
-            "5-UltimaPlus-Ceres.ips",
-            "6-UltimaPlus-Jupiter.ips",
-            "7-UltimaPlus-Saturn.ips",
-            "8-UltimaPlus-Uranus.ips",
-            "9-UltimaPlus-Neptune.ips",
-            "X-UltimaPlus-Pluto.ips"
+            "FF5r Clean.ips",
+            "FF5r Deep Clean.ips",
+            "FF5r Super Deep Clean.ips",
+            "FF5r Super Special Deep Clean.ips",
+            "FF5r Super Special Double Deep Clean.ips",
         ];
     }
   

@@ -1,0 +1,23 @@
+v2.07
+Bugfix by clymax to correct the "Double" patch (2x ABP, Exp, Gil) authored by C_CliFF and clymax.
+
+v2.06
+Fixes some labels in the Menu system & makes "Best" into Best (by Gens).
+
+v2.05
+adds missing bugfixes! (from Inu's trove at http://x11.s11.xrea.com/ff5patches)
+flee + HPcolor + multiSE + optimize + remedypetrified + remember + sworddance
+These were mistakenly left out of the release by xJ4cks after getting playtested by Gens for utility and cross-compatibility.
+
+v2.04
+fixes bugs introduced in v2.03 (why was I working on this on a holiday?)
+improves dialogue
+
+v2.03
+improves dialogue
+
+v2.02
+improves dialogue
+
+v2.01
+improves dialogue
