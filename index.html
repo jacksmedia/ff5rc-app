@@ -93,16 +93,14 @@
     <input type="file" id="rom" accept=".sfc">
   </div>
 
-  <!-- Dropdown -->
-  <div>
-    <h1>Select a Patch</h1>
-      <select id="patchDropdown">
-          <option value="" disabled selected>Select a patch...</option>
-      </select>
-      <button id="applyPatch">Apply Patch</button>
-  </div>
 
-  <script src="patch-selector.js"></script>
+   <!-- test dropdown of patches -->
+   <h1>Select a Patch</h1>
+   <select id="patch-dropdown">
+       <option value="" disabled selected>Select a patch</option>
+   </select>    
+
+    <button id="applyPatch">Apply Patch</button>
 
   <!-- Initial IPS Upload Inputs -->
   <div id="ips-uploads">
@@ -273,7 +271,7 @@
             "X-UltimaPlus-Pluto.ips"
         ];
     }
-
+  
     document.addEventListener("DOMContentLoaded", () => {
         const patchDropdown = document.getElementById("patchDropdown");
         const patches = fetchPatches(); // Fetches patch list
@@ -298,61 +296,54 @@
         });
     });
 
-    // fetching the zipfile from GitHub
-    document.addEventListener("DOMContentLoaded", async () => {
-    const patchDropdown = document.getElementById("patchDropdown");
-
-    async function fetchAndUnzipGitHubRepo() {
-        const zipUrl = 'https://github.com/jacksmedia/Ultima-Plus-Patchapp/blob/37a0f8c5b595c0c5c74259c885c9ef1b13e8784c/Final%20Fantasy%204%20Ultima%20Plus%20patch%20archive.zip'; // Replace with your repo's ZIP URL
-       // https://github.com/jacksmedia/Ultima-Plus-Patchapp/blob/main/Final%20Fantasy%204%20Ultima%20Plus%20patch%20archive.zip
-       // https://github.com/jacksmedia/Ultima-Plus-Patchapp/blob/37a0f8c5b595c0c5c74259c885c9ef1b13e8784c/Final%20Fantasy%204%20Ultima%20Plus%20patch%20archive.zip
-       try {
-            // Fetch ZIP file
-            const response = await fetch(zipUrl);
-            if (!response.ok) {
-                throw new Error(`Failed to fetch ZIP file: ${response.statusText}`);
-            }
-
-            const zipBlob = await response.blob();
-            const zip = await JSZip.loadAsync(zipBlob);
-
-            // Filter and extract files from a specific directory, e.g., "patches/"
-            const patchFiles = [];
-            zip.forEach((relativePath, file) => {
-                if (relativePath.startsWith("repository-name-main/patches/") && !file.dir) {
-                    patchFiles.push(relativePath.split('/').pop()); // Get the filename only
-                }
-            });
-
-            // Populate the dropdown
-            patchFiles.forEach(file => {
-                const option = document.createElement("option");
-                option.value = file;
-                option.textContent = file;
-                patchDropdown.appendChild(option);
-            });
-        } catch (error) {
-            console.error("Error fetching or unzipping:", error);
-            alert("Failed to load patches. Please try again later.");
+    async function loadLocalZip() {
+    const zipFilePath = './ff5rc.zip';
+    try {
+        const response = await fetch(zipFilePath);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch ZIP file: ${response.statusText}`);
         }
+
+        const zipBlob = await response.blob();
+        const zip = await JSZip.loadAsync(zipBlob);
+
+        console.log('ZIP file loaded successfully:', zip);
+
+        // Extract files from the specific directory
+        const patchFiles = Object.keys(zip.files).filter(relativePath =>
+            relativePath.startsWith('/') &&
+            !zip.files[relativePath].dir
+        );
+
+        console.log('Filtered patch files:', patchFiles);
+
+        populateDropdown(patchFiles);
+    } catch (error) {
+        console.error('Error loading or processing ZIP file:', error);
     }
+  }
+  function populateDropdown(patchFiles) {
+      const patchDropdown = document.getElementById('patch-dropdown');
+      if (!patchDropdown) {
+          console.error('Dropdown element not found');
+          return;
+      }
 
-    // Fetch and unzip the repo
-    await fetchAndUnzipGitHubRepo();
+      // Clear existing options
+      patchDropdown.innerHTML = '';
 
-    // Add event listener for the "Apply Patch" button
-    document.getElementById("applyPatch").addEventListener("click", () => {
-        const selectedPatch = patchDropdown.value;
-        if (selectedPatch) {
-            alert(`Applying patch: ${selectedPatch}`);
-            // Add logic to apply the selected patch here
-        } else {
-            alert("Please select a patch to apply!");
-        }
-    });
-});
+      // Populate dropdown
+      patchFiles.forEach(relativePath => {
+          const option = document.createElement("option");
+          option.value = relativePath;
+          option.textContent = relativePath.split('/').pop(); // Show only the file name
+          patchDropdown.appendChild(option);
+          console.log('Added to dropdown:', relativePath);
+      });
 
-    }
-  </script>
+      console.log('Dropdown options populated:', patchDropdown.options.length);
+  }
+}
+</script>
 </body>
 </html>
