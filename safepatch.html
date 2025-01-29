@@ -84,7 +84,7 @@
             // Checks for EOF in IPS to end process
             if (String.fromCharCode(...data.slice(i,i+3)) === "EOF") break;
 
-            // Reads 3-byte offset
+            // Reads 3-byte offsets
             const offset = (data[i] << 16) | (data[i+1] << 8) | data[i+2];
             i += 3;
 
@@ -92,7 +92,18 @@
             const size = (data[i] << 8) | data[i+1];
             i += 2;
 
+            if (size === 0){
+                // to account for RLE
+                const rleSize = (data[i] << 8) | data[i+1];
+                i += 2;
+                i++; // Skips repeated bytes
+                patches.push({ offset, size: rleSize });
+            } else {
+                patches.push({ offset, size });
+                i += size; // Only offsets are analyzed, data bytes skipped!
+            }
         }
+        return { file: file.name, patches };
     }
   </script>
 </body>
