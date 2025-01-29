@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multi-Patch ROM Patcher</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; }
+    body { font-family: Arial, sans-serif; text-align: center; background: linear-gradient(snow, orchid, snow); }
     .container { margin: 20px auto; width: 80%; max-width: 600px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
     .file-input { margin: 10px 0; }
     #conflict-report { color: red; font-weight: bold; display: none; }
-    #spinner { display: none; margin: 10px auto; border: 5px solid #f3f3f3; border-top: 5px solid blue; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+    #spinner { display: none; margin: 10px auto; border: 5px solid #f3f3f3; border-top: 5px solid #909; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   </style>
 </head>
@@ -104,6 +104,23 @@
             }
         }
         return { file: file.name, patches };
+    }
+
+    function detectConflicts(patchList){
+        let conflicts = [];
+        let addressMap = new Map();
+
+        for (let { file, patches } of patchList){
+            for (let { offset, size } of patches){
+                for (let addr = offset; addr < offset + size; addr++){
+                    if (addressMap.has(addr)){
+                        conflicts.push(`Conflict at 0x${addr.toString(16)} between ${file} and ${addressMap.get(addr)}`);
+                    }
+                    addressMap.set(addr, file);
+                }
+            }
+        }
+        return conflicts;
     }
   </script>
 </body>
