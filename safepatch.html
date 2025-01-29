@@ -32,7 +32,7 @@
   </div>
 
   <script>
-    async function analyzePatches() {
+    async function analyzePatches(){
         const romFile = document.getElementById('rom').files[0];
         const patchFiles = [
             document.getElementById('patch1').files[0],
@@ -50,20 +50,49 @@
         document.getElementById('conflict-report').style.display = 'none';
         document.getElementById('applyPatches').disabled = true;
 
+        try {
+            const patches = await Promise.all(patchFiles.map(parseIPS));
+            const conflicts = detectConflicts(patches);
 
-        let conflictFound = false; // Change this based on analysis
-
-        document.getElementById('spinner').style.display = 'none';
-        if (conflictFound) {
-        document.getElementById('conflict-report').textContent = "Conflict detected between patches!";
-        document.getElementById('conflict-report').style.display = 'block';
-        } else {
-        document.getElementById('applyPatches').disabled = false;
+            document.getElementById('spinner').style.display = 'none';
+            if (conflicts.length > 0) {
+                document.getElementById('conflict-report').textContent = "Conflicts detected:\n" + conflicts.join("\n");
+                document.getElementById('conflict-report').style.display = 'block';
+            } else {
+            document.getElementById('applyPatches').disabled = false;
+            }
+        } catch(error){
+            alert("Error analyzing, plz refresh and try again." + error.message);
+            document.getElementById('spinner').style.display = 'none';
         }
+
     }
 
-    function applyPatches() {
-      alert('Applying patches... (Implementation pending)');
+    async function parseIPS(file){
+    //   alert('Applying patches... (Implementation pending)');
+        const arrayBuffer = await file.arrayBuffer();
+        const data = new Uint8Array(arrayBuffer);
+
+        if (String.fromCharCode(...data.slice(0,5)) !== "PATCH") {
+            throw new Error(`Sorry, ${file.name} isn't a good IPS file`);
+        }
+
+        let i = 5;
+        let patches = [];
+
+        while (i < data.length - 3){
+            // Checks for EOF in IPS to end process
+            if (String.fromCharCode(...data.slice(i,i+3)) === "EOF") break;
+
+            // Reads 3-byte offset
+            const offset = (data[i] << 16) | (data[i+1] << 8) | data[i+2];
+            i += 3;
+
+            // Reads 2-byte sizes
+            const size = (data[i] << 8) | data[i+1];
+            i += 2;
+
+        }
     }
   </script>
 </body>
