@@ -32,23 +32,34 @@
   </div>
 
   <script>
-    function analyzePatches() {
-      document.getElementById('spinner').style.display = 'block';
-      document.getElementById('conflict-report').style.display = 'none';
-      document.getElementById('applyPatches').disabled = true;
+    async function analyzePatches() {
+        const romFile = document.getElementById('rom').files[0];
+        const patchFiles = [
+            document.getElementById('patch1').files[0],
+            document.getElementById('patch2').files[0],
+            document.getElementById('patch3').files[0],
+            document.getElementById('patch4').files[0]
+        ].filter(file => file); // removes empty values (no upload)
+ 
+        if (!romFile || patchFiles.length < 2){
+            alert("Plz upload a ROM and 2 or more IPS patch files");
+            return;
+        }
 
-      setTimeout(() => {
-        // Simulate analysis; replace with actual logic
+        document.getElementById('spinner').style.display = 'block';
+        document.getElementById('conflict-report').style.display = 'none';
+        document.getElementById('applyPatches').disabled = true;
+
+
         let conflictFound = false; // Change this based on analysis
 
         document.getElementById('spinner').style.display = 'none';
         if (conflictFound) {
-          document.getElementById('conflict-report').textContent = "Conflict detected between patches!";
-          document.getElementById('conflict-report').style.display = 'block';
+        document.getElementById('conflict-report').textContent = "Conflict detected between patches!";
+        document.getElementById('conflict-report').style.display = 'block';
         } else {
-          document.getElementById('applyPatches').disabled = false;
+        document.getElementById('applyPatches').disabled = false;
         }
-      }, 2000);
     }
 
     function applyPatches() {
