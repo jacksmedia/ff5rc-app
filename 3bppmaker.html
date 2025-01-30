@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PNG Palette Reducer</title>
+    <title>PNG Palette Reducer with Pyodide</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
         #drop-zone { border: 2px dashed #666; padding: 20px; margin: 20px auto; width: 80%; cursor: pointer; }
@@ -12,11 +12,13 @@
     </style>
 </head>
 <body>
-    <h1>PNG Palette Reducer (3bpp)</h1>
+    <h1>PNG Palette Reducer (3bpp) with Pyodide</h1>
     <div id="drop-zone">Drop PNG files here or click to upload</div>
     <input type="file" id="file-input" multiple accept="image/png">
     <button id="process-button" disabled>Process & Download</button>
-    
+
+    <!-- Load Pyodide -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
     <script>
         const dropZone = document.getElementById("drop-zone");
         const fileInput = document.getElementById("file-input");
@@ -39,67 +41,83 @@
             processButton.disabled = files.length === 0;
         }
 
+        async function initializePyodide() {
+            console.log("Loading Pyodide...");
+            const pyodide = await loadPyodide();
+            await pyodide.loadPackage("pillow");
+            console.log("Pyodide and Pillow are ready!");
+            return pyodide;
+        }
+
         processButton.addEventListener("click", async () => {
+            const pyodide = await initializePyodide();
+
             for (const file of files) {
                 const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => {
-                    const img = new Image();
-                    img.src = reader.result;
-                    img.onload = () => {
-                        const canvas = document.createElement("canvas");
-                        const ctx = canvas.getContext("2d");
-                        canvas.width = img.width;
-                        canvas.height = img.height;
-                        ctx.drawImage(img, 0, 0);
+                reader.readAsArrayBuffer(file);
+                reader.onload = async () => {
+                    const arrayBuffer = reader.result;
+                    const uint8Array = new Uint8Array(arrayBuffer);
 
-                        const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                        const data = imgData.data;
-                        let palette = [];
-                        let indexedData = new Uint8Array(data.length / 4);
+                    try {
+                        // Write the file to Pyodide's virtual file system
+                        pyodide.FS.writeFile(file.name, uint8Array);
 
-                        for (let i = 0; i < data.length; i += 4) {
-                            const color = `${data[i]},${data[i+1]},${data[i+2]}`;
-                            let index = palette.indexOf(color);
-                            if (index === -1 && palette.length < 8) {
-                                palette.push(color);
-                                index = palette.length - 1;
-                            } else if (index === -1) {
-                                index = findClosestColor(color, palette);
-                            }
-                            indexedData[i / 4] = index;
+                        // Debug: Verify the file exists
+                        const fileExists = pyodide.FS.analyzePath(file.name).exists;
+                        console.log("File exists in Pyodide FS:", fileExists);
+
+                        // Run Python code to process the image
+                        const result = await pyodide.runPythonAsync(`
+                            from PIL import Image
+                            import io
+
+                            try:
+                                # Debug: Verify the file can be opened
+                                print("Opening image file: ${file.name}")
+                                image = Image.open("${file.name}")
+                                print("Image format:", image.format)
+                                print("Image mode:", image.mode)
+                                print("Image size:", image.size)
+
+                                # Convert to 8-color indexed PNG
+                                image = image.convert("P", palette=Image.ADAPTIVE, colors=8)
+                                print("Image converted to 8-color palette")
+
+                                # Save the processed image to a bytes buffer
+                                output_buffer = io.BytesIO()
+                                image.save(output_buffer, format="PNG")
+                                output_buffer.seek(0)
+
+                                # Debug: Verify the buffer contains data
+                                print("Output buffer size:", output_buffer.getbuffer().nbytes)
+
+                                # Return the processed image as bytes
+                                output_buffer.getvalue()
+                            except Exception as e:
+                                print("Error in Python code:", str(e))
+                                raise e
+                        `);
+
+                        // Debug: Verify the result is a valid Uint8Array
+                        console.log("Result from Python:", result);
+
+                        if (result && result.length > 0) {
+                            // Convert the result to a Blob and download
+                            const blob = new Blob([result], { type: "image/png" });
+                            const link = document.createElement("a");
+                            link.download = file.name;
+                            link.href = URL.createObjectURL(blob);
+                            link.click();
+                        } else {
+                            console.error("No image data returned from Python.");
                         }
-
-                        const newImageData = ctx.createImageData(canvas.width, canvas.height);
-                        for (let i = 0; i < indexedData.length; i++) {
-                            const [r, g, b] = palette[indexedData[i]].split(",").map(Number);
-                            newImageData.data[i * 4] = r;
-                            newImageData.data[i * 4 + 1] = g;
-                            newImageData.data[i * 4 + 2] = b;
-                            newImageData.data[i * 4 + 3] = 255;
-                        }
-
-                        ctx.putImageData(newImageData, 0, 0);
-                        const link = document.createElement("a");
-                        link.download = file.name;
-                        link.href = canvas.toDataURL("image/png");
-                        link.click();
-                    };
+                    } catch (error) {
+                        console.error("Error processing image:", error);
+                    }
                 };
             }
         });
-
-        function findClosestColor(color, palette) {
-            return palette.reduce((bestIndex, currColor, index) => {
-                return colorDistance(color, currColor) < colorDistance(color, palette[bestIndex]) ? index : bestIndex;
-            }, 0);
-        }
-
-        function colorDistance(c1, c2) {
-            const [r1, g1, b1] = c1.split(",").map(Number);
-            const [r2, g2, b2] = c2.split(",").map(Number);
-            return Math.sqrt((r1 - r2) ** 2 + (g1 - g2) ** 2 + (b1 - b2) ** 2);
-        }
     </script>
 </body>
 </html>
