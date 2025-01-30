@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quattrocento:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <title>3bpp Maker</title>
+<style>
+.rubik-mono-one-regular {
+    font-family: "Rubik Mono One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.quattrocento-sans-regular {
+    font-family: "Quattrocento Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    font-family: "Quattrocento Sans", Arial, sans-serif;
+}
+h1 {
+    font-family: "Rubik Mono One", serif;
+}
+h4 {
+    font-family: "Rubik Mono One", serif;
+}
+#drop-zone {
+    margin-bottom: 10px;
+    background-color: palegoldenrod;
+    width: 80vw;
+    height: 40vh;
+}
+
+#process-button {
+    margin-top: 10px;
+}
+
+/* adapted from https://stackoverflow.com/questions/23441060/how-to-animate-gradients-using-css */
+    #gradient
+{
+    height:100vh;
+    width:100vw;
+    background: linear-gradient(177deg, papayawhip, palegoldenrod, goldenrod, chocolate, maroon);
+    background-size: 200% 200%;
+
+    -webkit-animation: Animation 44s ease infinite;
+    -moz-animation: Animation 44s ease infinite;
+    animation: Animation 44s ease infinite;
+}
+
+@-webkit-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@-moz-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@keyframes Animation { 
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+</style>
+</head>
+<body id="gradient">
+    <h1>PNG Palette Reducer (3bpp)</h1>
+    <h4>by xJ4cks & ChatGPT 4o</h4>
+    <div id="drop-zone">Drop PNG files here or click to upload!
+        <input type="file" id="file-input" multiple accept="image/png">
+    </div>
+    <button id="process-button" disabled>Process & Download</button>
+    
+    <script>
+        const dropZone = document.getElementById("drop-zone");
+        const fileInput = document.getElementById("file-input");
+        const processButton = document.getElementById("process-button");
+        let files = [];
+
+        dropZone.addEventListener("click", () => fileInput.click());
+        dropZone.addEventListener("dragover", (e) => { e.preventDefault(); dropZone.style.borderColor = "blue"; });
+        dropZone.addEventListener("dragleave", () => dropZone.style.borderColor = "#666");
+        dropZone.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = "#666";
+            handleFiles(e.dataTransfer.files);
+        });
+
+        fileInput.addEventListener("change", () => handleFiles(fileInput.files));
+
+        function handleFiles(selectedFiles) {
+            files = Array.from(selectedFiles);
+            processButton.disabled = files.length === 0;
+        }
+
+        processButton.addEventListener("click", async () => {
+            for (const file of files) {
+                const img = new Image();
+                img.src = URL.createObjectURL(file);
+                img.onload = async () => {
+                    const canvas = document.createElement("canvas");
+                    const ctx = canvas.getContext("2d");
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+                    
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const newImageData = reducePalette(imageData);
+                    ctx.putImageData(newImageData, 0, 0);
+
+                    const link = document.createElement("a");
+                    link.download = file.name;
+                    link.href = canvas.toDataURL("image/png");
+                    link.click();
+                };
+            }
+        });
+
+        function reducePalette(imageData) {
+            const data = imageData.data;
+            let palette = [];
+            
+            for (let i = 0; i < data.length; i += 4) {
+                const color = data.slice(i, i + 3).join(",");
+                if (!palette.includes(color)) {
+                    if (palette.length < 8) {
+                        palette.push(color);
+                    } else {
+                        const nearest = palette.reduce((a, b) => colorDistance(a, color) < colorDistance(b, color) ? a : b);
+                        const [r, g, b] = nearest.split(",").map(Number);
+                        data[i] = r;
+                        data[i + 1] = g;
+                        data[i + 2] = b;
+                    }
+                }
+            }
+            return imageData;
+        }
+
+        function colorDistance(c1, c2) {
+            const [r1, g1, b1] = c1.split(",").map(Number);
+            const [r2, g2, b2] = c2.split(",").map(Number);
+            return Math.sqrt((r1 - r2) ** 2 + (g1 - g2) ** 2 + (b1 - b2) ** 2);
+        }
+    </script>
+</body>
+</html>
