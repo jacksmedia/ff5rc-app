@@ -1,12 +1,13 @@
-use image::{ImageBuffer, Rgba, Pixel};
+use image::{Rgba, Pixel};
 use wasm_bindgen::prelude::*;
 use std::io::Cursor;
+use png::{Encoder, ColorType}; // Using `png` crate for indexed PNG support
 
 #[wasm_bindgen]
 pub fn reduce_png_colors(input: &[u8]) -> Vec<u8> {
     // Decode the PNG image
-    let img = image::load_from_memory(input).unwrap();
-    let img = img.to_rgba8();
+    let img = image::load_from_memory(input).unwrap().to_rgba8();
+    let (width, height) = img.dimensions();
 
     // Create a palette with the first 8 unique colors
     let mut palette = Vec::new();
@@ -22,28 +23,39 @@ pub fn reduce_png_colors(input: &[u8]) -> Vec<u8> {
         palette.push(Rgba([0, 0, 0, 255]));
     }
 
-    // Map all pixels to the closest color in the palette
-    let mut output_img = ImageBuffer::new(img.width(), img.height());
-    for (x, y, pixel) in img.enumerate_pixels() {
+    // Create an indexed image where each pixel is mapped to a palette index
+    let mut indexed_pixels = vec![0u8; (width * height) as usize];
+
+    for (i, pixel) in img.pixels().enumerate() {
         let color = pixel.to_rgba();
-        let closest_color = find_closest_color(&color, &palette);
-        output_img.put_pixel(x, y, closest_color);
+        let closest_index = find_closest_color_index(&color, &palette);
+        indexed_pixels[i] = closest_index as u8;
     }
 
-    // Encode the output image as a PNG
+    // Flatten palette into RGB triplets (excluding alpha)
+    let palette_bytes: Vec<u8> = palette.iter()
+        .flat_map(|c| vec![c[0], c[1], c[2]]) // Only store RGB
+        .collect();
+
+    // Encode the output image as an indexed PNG using `png` crate
     let mut output_buffer = Cursor::new(Vec::new());
-    output_img
-        .write_to(&mut output_buffer, image::ImageFormat::Png)
-        .unwrap();
+    {
+        let mut encoder = Encoder::new(&mut output_buffer, width, height);
+        encoder.set_color(ColorType::Indexed);
+        encoder.set_palette(palette_bytes);
+
+        let mut writer = encoder.write_header().unwrap();
+        writer.write_image_data(&indexed_pixels).unwrap();
+    }
 
     output_buffer.into_inner()
 }
 
-fn find_closest_color(color: &Rgba<u8>, palette: &[Rgba<u8>]) -> Rgba<u8> {
-    palette
-        .iter()
-        .min_by_key(|&palette_color| color_distance(color, palette_color))
-        .cloned()
+fn find_closest_color_index(color: &Rgba<u8>, palette: &[Rgba<u8>]) -> usize {
+    palette.iter()
+        .enumerate()
+        .min_by_key(|(_, &palette_color)| color_distance(color, &palette_color))
+        .map(|(index, _)| index)
         .unwrap()
 }
 
