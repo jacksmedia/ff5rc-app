@@ -194,42 +194,42 @@ h2 {
   
     // Apply IPS Patch Logic
     async function applySelectedPatch() {
-    if (!romData) {
-        alert('Please upload a ROM file first!');
-        return;
-    }
-
-    const patchDropdown = document.getElementById('patch-dropdown');
-    const selectedPatch = patchDropdown.value;
-    if (!selectedPatch) {
-        alert('Please select a patch to apply!');
-        return;
-    }
-
-    try {
-        showSpinner(); // Show spinner at the start
-
-        // Fetch the IPS file from the ZIP
-        const patchFile = zip.files[selectedPatch];
-        if (!patchFile) {
-            throw new Error('Patch file not found in ZIP!');
+        if (!romData) {
+            alert('Please upload a ROM file first!');
+            return;
         }
 
-        const patchData = await patchFile.async('uint8array'); // Get patch data as Uint8Array
+        const patchDropdown = document.getElementById('patch-dropdown');
+        const selectedPatch = patchDropdown.value;
+        if (!selectedPatch) {
+            alert('Please select a patch to apply!');
+            return;
+        }
 
-        // Apply the IPS patch
-        const patchedRom = await applyIpsPatch(romData, patchData);
-        console.log('Patch applied successfully.');
+        try {
+            showSpinner(); // Show spinner at the start
 
-        // Trigger download of the patched ROM
-        downloadPatchedRom(patchedRom, 'patched_rom.sfc');
-    } catch (error) {
-        console.error('Error applying patch:', error);
-        alert(`Error applying patch: ${error.message}`);
-    } finally {
-        hideSpinner(); // Ensure spinner is hidden in all cases
+            // Fetch the IPS file from the ZIP
+            const patchFile = zip.files[selectedPatch];
+            if (!patchFile) {
+                throw new Error('Patch file not found in ZIP!');
+            }
+
+            const patchData = await patchFile.async('uint8array'); // Get patch data as Uint8Array
+
+            // Apply the IPS patch
+            const patchedRom = await applyIpsPatch(romData, patchData);
+            console.log('Patch applied successfully.');
+
+            // Trigger download of the patched ROM
+            downloadPatchedRom(patchedRom, 'patched_rom.sfc');
+        } catch (error) {
+            console.error('Error applying patch:', error);
+            alert(`Error applying patch: ${error.message}`);
+        } finally {
+            hideSpinner(); // Ensure spinner is hidden in all cases
+        }
     }
-}
 
 
     async function applyIpsPatch(romData, ipsData) {
