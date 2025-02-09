@@ -32,7 +32,6 @@ h2 {
 }
 .file-upload {
     margin-bottom: 10px;
-    background-color: palegoldenrod;
 }
 #additional-uploads {
     margin-top: 10px;
@@ -44,7 +43,6 @@ h2 {
     background-color: antiquewhite;
 }
 #patch {
-    background-color: papayawhip;
     font-family: "Rubik Mono One", serif;
 }
 
@@ -68,7 +66,7 @@ h2 {
   width: 50px;
   height: 50px;
   border: 6px solid #f3f3f3;
-  border-top: 6px solid orchid;
+  border-top: 6px solid navy;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -93,7 +91,7 @@ h2 {
 {
     height:100vh;
     width:100vw;
-    background: linear-gradient(130deg, palegoldenrod, papayawhip, orchid);
+    background: linear-gradient(130deg, antiquewhite, palegoldenrod, orchid, navy);
     background-size: 200% 200%;
 
     -webkit-animation: Animation 23s ease infinite;
@@ -123,51 +121,49 @@ h2 {
 
 </head>
 <body id="gradient" class="container-fluid">
+    <!-- UX element that shows during download then is removed -->
+    <div id="spinner-overlay" class="spinner-overlay">
+        <div class="spinner"></div>
+    </div>
     <h1>FF5r Clean Patcher</h1>
     <h3>
         by xJ4cks & ChatGPT4
     </h3>
-    <p>Upload your FFVJ ROM and choose a patch.</p>
-    <p>The ROM CRC32 = C1BC267D</p> 
-    <!-- ROM Upload -->
-    <div class="file-upload">
-        <label for="rom">ROM File (.sfc):</label>
-        <input type="file" id="rom" accept=".sfc">
-    </div>
-        <hr/>
+    <hr/>
     <div class="row">
-        <div class="col-sm-6">
-            <p>Multiple versions of FF5r Clean exist:</p>
+        <div class="col-md-6">    
+            <img src="./FF5r-Clean-previews.gif" style="width:100%" />
+        </div>
+        <div class="col-md-6">
+            <h4>Upload your FFVJ ROM and choose a patch.</h4>
+            <p>The ROM CRC32 = C1BC267D</p>
+            <!-- ROM Upload -->
+            <div class="file-upload">
+                <label for="rom">ROM File (.sfc):</label>
+                <input type="file" id="rom" accept=".sfc">
+            </div>
+            <h4>Multiple versions of FF5r Clean exist:</h4>
             <ul>
-                <li>Clean: nicer fonts, better UX, "Lv Up" vs "Drag" spell, and Jobs are visible on the map!</li>
+                <li>Clean: nicer fonts, improved spell and Ability names, better UX, "Lv Up" vs "Drag" spell, and Jobs are visible on the map!</li>
                 <li>Deep Clean: + easier Stealing and Blue Spell Learning</li>
                 <li>Super Deep Clean: + all Jobs can customize 3 of their Ability slots</li>
                 <li>Super Double Deep Clean: + 2x EXP, ABP, and gil</li>
                 <li>Super Special Double Deep Clean: + Jobs retain their Special ability (vs !Item)</li>
             </ul>
-        </div>
-        <div class="col-sm-6">    
-            <img src="./FF5r-Clean-previews.gif" />
+            <!-- dropdown of patches -->
+            <h2>Choose the Features</h2>
+            <select id="patch-dropdown">
+                <option value="" disabled selected>Select a patch</option>
+            </select>
+            <br/>
+            <button id="applyPatch">Apply Patch</button>
         </div>
     </div>
 
-
-  <!-- UX element that shows during download then is removed -->
-  <div id="spinner-overlay" class="spinner-overlay">
-    <div class="spinner"></div>
-  </div>
-
-   <!-- test dropdown of patches -->
-   <h2>Choose the Features</h2>
-   <select id="patch-dropdown">
-       <option value="" disabled selected>Select a patch</option>
-   </select>    
-
-  <button id="applyPatch">Apply Patch</button>
-  <hr/>
-  <p>by xJ4cks, Serity, Gens, Cubear, Inu, Tzepish, HatZen08, clymax, C_CliFF</p>
-  <p>FF5r by ff5aki</p>
-  <p>Final Fantasy V by Squaresoft, 1992. Please obey all copyright laws and only use roms which you own the physical media of.</p>
+    <hr/>
+    <p>by xJ4cks, Serity, Gens, Cubear, Inu, Tzepish, HatZen08, clymax, C_CliFF</p>
+    <p>FF5r by ff5aki</p>
+    <p>Final Fantasy V by Squaresoft, 1992. Please obey all copyright laws and only use roms which you own the physical media of.</p>
 
   <script>
     let romData = null; // Store the uploaded ROM file data
