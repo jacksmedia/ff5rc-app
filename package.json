@@ -1,0 +1,15 @@
+{
+  "name": "png_reducer",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "png_reducer_bg.wasm",
+    "png_reducer.js",
+    "png_reducer.d.ts"
+  ],
+  "main": "png_reducer.js",
+  "types": "png_reducer.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

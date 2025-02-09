@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG Palette Reducer with Rust</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        #drop-zone { border: 2px dashed #666; padding: 20px; margin: 20px auto; width: 80%; cursor: pointer; }
+        #file-input { display: block; }
+        button { margin-top: 10px; padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>PNG Palette Reducer (3bpp)</h1>
+    <div id="drop-zone">Drop PNG files here or click to upload</div>
+    <input type="file" id="file-input" multiple accept="image/png">
+    <button id="process-button" disabled>Process & Download</button>
+
+    <!-- Load the WebAssembly module -->
+    <script type="module">
+        import init, { reduce_png_colors } from './png_reducer/pkg/png_reducer.js';
+
+        const dropZone = document.getElementById("drop-zone");
+        const fileInput = document.getElementById("file-input");
+        const processButton = document.getElementById("process-button");
+        let files = [];
+
+        // Debug: Log WebAssembly initialization
+        async function initializeWasm() {
+            console.log("Initializing WebAssembly module...");
+            try {
+                await init();
+                console.log("WebAssembly module initialized successfully!");
+            } catch (error) {
+                console.error("Failed to initialize WebAssembly module:", error);
+            }
+        }
+
+        // Debug: Log file handling
+        function handleFiles(selectedFiles) {
+            console.log("Handling files...");
+            files = Array.from(selectedFiles);
+            console.log(`Selected ${files.length} file(s):`, files);
+            processButton.disabled = files.length === 0;
+        }
+
+        // Debug: Log file drops
+        dropZone.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = "blue";
+            console.log("File dragged over drop zone.");
+        });
+
+        dropZone.addEventListener("dragleave", () => {
+            dropZone.style.borderColor = "#666";
+            console.log("File dragged out of drop zone.");
+        });
+
+        dropZone.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = "#666";
+            console.log("File dropped into drop zone.");
+            handleFiles(e.dataTransfer.files);
+        });
+
+        // Debug: Log file selection
+        dropZone.addEventListener("click", () => {
+            console.log("Drop zone clicked, triggering file input.");
+            fileInput.click();
+        });
+
+        fileInput.addEventListener("change", () => {
+            console.log("File input changed.");
+            handleFiles(fileInput.files);
+        });
+
+        // Debug: Log file processing
+        processButton.addEventListener("click", async () => {
+            if (files.length === 0) {
+                console.error("No files selected.");
+                return;
+            }
+
+            console.log("Processing files...");
+
+            // Initialize WebAssembly
+            await initializeWasm();
+
+            for (const file of files) {
+                console.log(`Processing file: ${file.name}`);
+
+                const reader = new FileReader();
+                reader.readAsArrayBuffer(file);
+
+                reader.onload = async () => {
+                    console.log("File read successfully.");
+
+                    const arrayBuffer = reader.result;
+                    const uint8Array = new Uint8Array(arrayBuffer);
+
+                    try {
+                        console.log("Calling Rust function to reduce colors...");
+
+                        // Call the Rust function
+                        const result = reduce_png_colors(uint8Array);
+
+                        console.log("Image processed successfully. Preparing download...");
+
+                        // Convert the result to a Blob and download
+                        const blob = new Blob([result], { type: "image/png" });
+                        const link = document.createElement("a");
+                        link.download = file.name.replace(/\.[^/.]+$/, "") + "_reduced.png"; // Append "_reduced" to the filename
+                        link.href = URL.createObjectURL(blob);
+                        link.click();
+
+                        console.log(`Download started for file: ${link.download}`);
+                    } catch (error) {
+                        console.error("Error processing image:", error);
+                    }
+                };
+
+                reader.onerror = () => {
+                    console.error("Error reading file:", reader.error);
+                };
+            }
+        });
+    </script>
+</body>
+</html>

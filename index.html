@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quattrocento:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
-  <title>FF5r Clean Patcher</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- layout logic from Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quattrocento:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <title>FF5r Clean Patcher</title>
+<style>
 .rubik-mono-one-regular {
     font-family: "Rubik Mono One", serif;
     font-weight: 400;
@@ -114,32 +116,42 @@ h2 {
     50%{background-position:91% 100%}
     100%{background-position:10% 0%}
 }
-  </style>
-  <!-- for unzipping archives -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</style>
+<!-- for unzipping archives -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
 
 </head>
-<body id="gradient">
-  <h1>FF5r Clean Patcher</h1>
-  <h3>
-    by xJ4cks & ChatGPT4
-  </h3>
-  <p>Upload your FFVJ ROM and choose a patch.</p>
-  <!-- ROM Upload -->
-  <div class="file-upload">
-    <label for="rom">ROM File (.sfc):</label>
-    <input type="file" id="rom" accept=".sfc">
-  </div>
-  <hr/>
-  <p>Multiple version of FF5r Clean exist:</p>
-  <ul>
-    <li>Clean</li>
-    <li>Deep Clean</li>
-    <li>Super Deep Clean</li>
-    <li>Super Double Deep Clean</li>
-    <li>Super Special Double Deep Clean</li>
-  </ul>
+<body id="gradient" class="container-fluid">
+    <h1>FF5r Clean Patcher</h1>
+    <h3>
+        by xJ4cks & ChatGPT4
+    </h3>
+    <p>Upload your FFVJ ROM and choose a patch.</p>
+    <p>The ROM CRC32 = C1BC267D</p> 
+    <!-- ROM Upload -->
+    <div class="file-upload">
+        <label for="rom">ROM File (.sfc):</label>
+        <input type="file" id="rom" accept=".sfc">
+    </div>
+        <hr/>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Multiple versions of FF5r Clean exist:</p>
+            <ul>
+                <li>Clean: nicer fonts, better UX, "Lv Up" vs "Drag" spell, and Jobs are visible on the map!</li>
+                <li>Deep Clean: + easier Stealing and Blue Spell Learning</li>
+                <li>Super Deep Clean: + all Jobs can customize 3 of their Ability slots</li>
+                <li>Super Double Deep Clean: + 2x EXP, ABP, and gil</li>
+                <li>Super Special Double Deep Clean: + Jobs retain their Special ability (vs !Item)</li>
+            </ul>
+        </div>
+        <div class="col-sm-6">    
+            <img src="./FF5r-Clean-previews.gif" />
+        </div>
+    </div>
+
+
   <!-- UX element that shows during download then is removed -->
   <div id="spinner-overlay" class="spinner-overlay">
     <div class="spinner"></div>
