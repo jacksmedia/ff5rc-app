@@ -8,7 +8,7 @@ Gens helped improve the dialogue font, the menu system, and created options that
 
 Special work by HatZen08 enables a "Super" mode with 3 custom Ability slots for every Job, and this comes in two flavors. C_CliFF's "2x ABP, exp, Gil" patch is also included, with an adjustment by clymax. Add both of these to the Deep Clean patch for "Super Double Deep Clean", or use either or both with the main Clean version.
 
-Obviously, the talents of MANY people are leveraged here, and s8fp98fd5k is credited as the author of "FF5r". They already gave themselves a cameo NPC, otherwise I would’ve made them one; many mentors and helpful hackers have their own avatars in Tule, as well as some brave players who’ve actually beaten this hardtype version of FFV…
+Obviously, the talents of MANY people are leveraged here, and ff5aki is credited as the author of "FF5r". They already gave themselves a cameo NPC, otherwise I would’ve made them one; many mentors and helpful hackers have their own avatars in Tule, as well as some brave players who’ve actually beaten this hardtype version of FFV…
 
 Two small design changes make "FF5r Clean" a bit different from original "FF5r": a new Time spell, and early access to Lix. These can be ignored, or they can provide a slight advantage in this challenging game-– it’s up to you!
 
