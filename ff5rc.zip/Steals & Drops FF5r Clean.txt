@@ -1,0 +1,1669 @@
+FF5r Steals and Drops
+Compiled by KainStryder
+-----------------------
+
+Spoilers for every enemy in the game follow.
+
+Enemies can have up to two rare and one common steal.
+The second rare steal is the same item as the rare drop.
+
+You can steal from an enemy until they have no items left.
+This means you can get every item from an enemy.
+
+If an enemy has a "Common Drop", it will always drop.
+
+
+[000/#  0] Goblin
+       Common Steal: Potion
+    Rare Drop/Steal: Leather Helmet
+
+[001/#  1] Killer Bee
+         Rare Steal: Potion
+
+[002/#  2] Nut Eater
+       Common Steal: Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: Potion
+
+[003/#  3] Stray Cat
+       Common Steal: Potion
+         Rare Steal: Potion
+
+[004/#  4] Steel Bat
+         Rare Steal: Potion
+
+[005/#  5] Rollybug
+       Common Steal: Potion
+         Rare Steal: Ether
+    Rare Drop/Steal: Potion
+
+[006/#  6] Stalagmite
+       Common Steal: GoldNeedle
+
+[007/#  7] Black Goblin
+       Common Steal: Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: Leather Shoes
+
+[008/#  8] Chimera
+         Rare Steal: Spear
+    Rare Drop/Steal: Dagger
+
+[009/#  9] Mold Wind
+    Rare Drop/Steal: Elixir
+
+[00A/# 10] MagicBunny
+       Common Steal: Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: Rod
+
+[00B/# 11] Magic Pot
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Elixir
+
+[00C/# 12] Sucker
+    Rare Drop/Steal: Potion
+
+[00D/# 13] Tentacles
+    Rare Drop/Steal: Potion
+
+[00E/# 14] Gatlings
+         Rare Steal: GoldNeedle
+    Rare Drop/Steal: GoldNeedle
+
+[00F/# 15] Bighorn
+         Rare Steal: Potion
+    Rare Drop/Steal: Potion
+
+[010/# 16] Tatu
+         Rare Steal: Potion
+    Rare Drop/Steal: Tent
+
+[011/# 17] RuneBeetle
+       Common Steal: Potion
+    Rare Drop/Steal: Potion
+
+[012/# 18] Scarmiglion
+       Common Steal: Phoenix Down
+        Common Drop: Ramuh
+
+[013/# 19] Skeleton
+    Rare Drop/Steal: Dagger
+
+[014/# 20] Carcurser
+       Common Steal: Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: Elixir
+
+[015/# 21] UndeadRusk
+       Common Steal: Potion
+         Rare Steal: Ether
+    Rare Drop/Steal: Elixir
+
+[016/# 22] Zombie
+       Common Steal: Antidote
+         Rare Steal: Antidote
+    Rare Drop/Steal: Antidote
+
+[017/# 23] RockGarter
+       Common Steal: Potion
+
+[018/# 24] Firefly
+    Rare Drop/Steal: Potion
+
+[019/# 25] MossFungus
+       Common Steal: Antidote
+         Rare Steal: Dark Matter
+    Rare Drop/Steal: Antidote
+
+[01A/# 26] Blocks
+       Common Steal: Glasses
+         Rare Steal: Hi-Potion
+
+[01B/# 27] Elf Toad
+    Rare Drop/Steal: Potion
+
+[01C/# 28] Demicrystl
+       Common Steal: Long Sword
+         Rare Steal: Elixir
+    Rare Drop/Steal: Mythril Sword
+
+[01D/# 29] RikaldMage
+       Common Steal: Rod
+    Rare Drop/Steal: Flame Rod
+
+[01E/# 30] Wyvern
+       Common Steal: Mythril Dagger
+        Common Drop: Potion
+
+[01F/# 31] Padosule
+       Common Steal: Potion
+
+[020/# 32] Intangir
+       Common Steal: Elixir
+         Rare Steal: Corna Jar
+    Rare Drop/Steal: Cabin
+
+[021/# 33] Aegil
+       Common Steal: Potion
+
+[022/# 34] Zuu
+         Rare Steal: Elixir
+    Rare Drop/Steal: Elixir
+
+[023/# 35] Wild Nakk
+       Common Steal: Potion
+
+[024/# 36] GrassTurtle
+         Rare Steal: Turtle Shell
+        Common Drop: Turtle Shell
+
+[025/# 37] Silent Bee
+    Rare Drop/Steal: GoldNeedle
+
+[026/# 38] Hill Gigas
+       Common Steal: Leather Shoes
+         Rare Steal: Giant's Glove
+
+[027/# 39] Vice
+       Common Steal: Glasses
+         Rare Steal: Silver Armlet
+    Rare Drop/Steal: Silver Bow
+
+[028/# 40] Crew Dust
+       Common Steal: Potion
+         Rare Steal: Eyedrop
+
+[029/# 41] SecurityEye
+         Rare Steal: Elixir
+
+[02A/# 42] Motor Trap
+       Common Steal: Ether
+
+[02B/# 43] Ship Guard
+       Common Steal: Hi-Potion
+    Rare Drop/Steal: Phoenix Down
+
+[02C/# 44] Garkimasra
+       Common Steal: Protect Drink
+         Rare Steal: Elixir
+    Rare Drop/Steal: Phoenix Down
+
+[02D/# 45] Sergeant
+       Common Steal: Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: Silver Plate
+
+[02E/# 46] Sorcerer
+       Common Steal: Mage Masher
+         Rare Steal: Gaia Gear
+    Rare Drop/Steal: Ether
+
+[02F/# 47] Cur Nakk
+       Common Steal: Potion
+
+[030/# 48] Gigas
+       Common Steal: Elixir
+        Common Drop: Giant Drink
+
+[031/# 49] Page 32
+       Common Steal: Potion
+         Rare Steal: Green Beret
+    Rare Drop/Steal: Potion
+
+[032/# 50] Page 64
+       Common Steal: Potion
+         Rare Steal: Glasses
+    Rare Drop/Steal: Phoenix Down
+
+[033/# 51] Page 128
+       Common Steal: Ether
+    Rare Drop/Steal: Potion
+
+[034/# 52] Page 256
+       Common Steal: Hi-Potion
+         Rare Steal: Ninja Suit
+    Rare Drop/Steal: Mythril Glove
+
+[035/# 53] Mimic
+       Common Steal: Phoenix Down
+         Rare Steal: Gaia Gear
+    Rare Drop/Steal: Phoenix Down
+
+[036/# 54] Bomb
+       Common Steal: Potion
+    Rare Drop/Steal: Potion
+
+[037/# 55] TwinLizard
+    Rare Drop/Steal: Potion
+
+[038/# 56] BioSoldier
+       Common Steal: Battle Axe
+         Rare Steal: War Hammer
+    Rare Drop/Steal: Antidote
+
+[039/# 57] Crescent
+       Common Steal: Silver Bow
+    Rare Drop/Steal: Doom Axe
+
+[03A/# 58] BlackFlame
+         Rare Steal: Speed Drink
+    Rare Drop/Steal: Speed Drink
+
+[03B/# 59] StoneGolem
+       Common Steal: GoldNeedle
+    Rare Drop/Steal: Hi-Potion
+
+[03C/# 60] MiniDragon
+         Rare Steal: Dragon Fang
+
+[03D/# 61] Prototype
+       Common Steal: Ether
+        Common Drop: Dark Matter
+
+[03E/# 62] D.Chimera
+         Rare Steal: Trident
+    Rare Drop/Steal: Phoenix Down
+
+[03F/# 63] Sand Porky
+       Common Steal: Potion
+    Rare Drop/Steal: Potion
+
+[040/# 64] Sand Killer
+    Rare Drop/Steal: Antidote
+
+[041/# 65] Sand Bear
+         Rare Steal: Javelin
+        Common Drop: Antidote
+
+[042/# 66] Ra Mage
+       Common Steal: Bard's Clothes
+    Rare Drop/Steal: Elixir
+
+[043/# 67] LonkaArmor
+       Common Steal: Hi-Potion
+         Rare Steal: Mythril Armor
+    Rare Drop/Steal: Tent
+
+[044/# 68] Bog Witch
+       Common Steal: Leather Shoes
+         Rare Steal: Lamia's Tiara
+    Rare Drop/Steal: Maiden's Kiss
+
+[045/# 69] Whirl Demon
+       Common Steal: Potion
+         Rare Steal: Elixir
+    Rare Drop/Steal: Darkness Bow
+
+[046/# 70] Lamia
+       Common Steal: Maiden's Kiss
+         Rare Steal: Lamia's Tiara
+
+[047/# 71] Bog Toad
+       Common Steal: Maiden's Kiss
+
+[048/# 72] Hyudora
+       Common Steal: Ether
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Dragon Fang
+
+[049/# 73] Hydra
+         Rare Steal: Killer Bow
+        Common Drop: Phoenix Down
+
+[04A/# 74] Mindflayer
+       Common Steal: Green Beret
+         Rare Steal: Guardian
+    Rare Drop/Steal: Silk Robe
+
+[04B/# 75] Rukh
+       Common Steal: Hi-Potion
+         Rare Steal: Kotetsu
+    Rare Drop/Steal: Giant Drink
+
+[04C/# 76] Baby Rukh
+       Common Steal: GoldNeedle
+         Rare Steal: Gale Bow
+
+[04D/# 77] Kunoichi
+       Common Steal: Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: Kodachi
+
+[04E/# 78] Jail Bear
+    Rare Drop/Steal: Hi-Potion
+
+[04F/# 79] Cockatrice
+         Rare Steal: Angel Wings
+    Rare Drop/Steal: GoldNeedle
+
+[050/# 80] Dilure
+       Common Steal: Potion
+    Rare Drop/Steal: Potion
+
+[051/# 81] KillerMantis
+       Common Steal: Potion
+
+[052/# 82] Devourer
+         Rare Steal: Hi-Potion
+
+[053/# 83] Mandrake
+       Common Steal: Eyedrop
+         Rare Steal: Antidote
+
+[054/# 84] Kuzar
+    Rare Drop/Steal: Elixir
+
+[055/# 85] Sword Rat
+       Common Steal: Potion
+         Rare Steal: GoldNeedle
+
+[056/# 86] Cactuar
+         Rare Steal: Impartisan
+    Rare Drop/Steal: Imp's Armor
+
+[057/# 87] ShieldDrgn
+       Common Steal: Mythril Shield
+         Rare Steal: Gold Shield
+    Rare Drop/Steal: Gold Shield
+
+[058/# 88] GreatHippo
+       Common Steal: Tent
+        Common Drop: Power Drink
+
+[059/# 89] Orcat
+       Common Steal: Eyedrop
+         Rare Steal: Dark Matter
+    Rare Drop/Steal: Phoenix Down
+
+[05A/# 90] MooglEater
+         Rare Steal: Hi-Potion
+
+[05B/# 91] Valefor
+       Common Steal: Hi-Potion
+    Rare Drop/Steal: Poison Rod
+
+[05C/# 92] Skull Eater
+       Common Steal: Tent
+    Rare Drop/Steal: Elixir
+
+[05D/# 93] Aquathone
+       Common Steal: Potion
+    Rare Drop/Steal: Antidote
+
+[05E/# 94] Weresnake
+       Common Steal: Potion
+    Rare Drop/Steal: Hi-Potion
+
+[05F/# 95] Conago
+       Common Steal: Potion
+    Rare Drop/Steal: Eyedrop
+
+[060/# 96] Slug
+       Common Steal: Potion
+         Rare Steal: Hi-Potion
+
+[061/# 97] Tyranosaur
+         Rare Steal: Imp's Armor
+    Rare Drop/Steal: Impartisan
+
+[062/# 98] Drippy
+       Common Steal: Mythril Hammer
+         Rare Steal: Bard's Clothes
+    Rare Drop/Steal: Tent
+
+[063/# 99] Lycaon
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: HolyWater
+
+[064/#100] Gorgon
+       Common Steal: GoldNeedle
+         Rare Steal: Elixir
+    Rare Drop/Steal: GoldNeedle
+
+[065/#101] Malboro
+         Rare Steal: Star Pendant
+    Rare Drop/Steal: Maiden's Kiss
+
+[066/#102] ZombieDrgn
+         Rare Steal: Dark Matter
+        Common Drop: Dragon Fang
+
+[067/#103] Golem
+       Common Steal: GoldNeedle
+         Rare Steal: GoldNeedle
+
+[068/#104] Neon
+       Common Steal: Speed Drink
+    Rare Drop/Steal: Speed Drink
+
+[069/#105] Magnetite
+    Rare Drop/Steal: Hi-Potion
+
+[06A/#106] Reflect Knight
+       Common Steal: War Hammer
+         Rare Steal: Poison Axe
+    Rare Drop/Steal: Wall Ring
+
+[06B/#107] Traveler
+         Rare Steal: Dream Harp
+    Rare Drop/Steal: Dream Harp
+
+[06C/#108] Tricker
+       Common Steal: Potion
+    Rare Drop/Steal: Hi-Potion
+
+[06D/#109] Gravido
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Gaia Gear
+
+[06E/#110] BlackKnight
+         Rare Steal: Partisan
+    Rare Drop/Steal: Speed Drink
+
+[06F/#111] Cure Beast
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Elixir
+
+[070/#112] Land Turtle
+       Common Steal: Potion
+        Common Drop: Turtle Shell
+
+[071/#113] PyroLizard
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Potion
+
+[072/#114] Lunatys
+         Rare Steal: Diamond Armlet
+        Common Drop: Phoenix Down
+
+[073/#115] MiniMage
+         Rare Steal: Tricorn
+    Rare Drop/Steal: Tricorn
+
+[074/#116] White Snake
+         Rare Steal: Ice Shield
+    Rare Drop/Steal: Hi-Potion
+
+[075/#117] Coatl
+         Rare Steal: Flame Shield
+    Rare Drop/Steal: Ether
+
+[076/#118] Cait Sith
+         Rare Steal: Phoenix Down
+    Rare Drop/Steal: Phoenix Down
+
+[077/#119] Wyrm
+       Common Steal: Antidote
+    Rare Drop/Steal: Dragon Fang
+
+[078/#120] ShadoMastr
+       Common Steal: Shuriken
+         Rare Steal: Fuma Shuriken
+
+[079/#121] Cruller
+       Common Steal: Potion
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Speed Drink
+
+[07A/#122] Arage
+       Common Steal: Potion
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Phoenix Down
+
+[07B/#123] Reflect Mage
+         Rare Steal: Wall Ring
+    Rare Drop/Steal: Ether
+
+[07C/#124] HellChndelir
+       Common Steal: Phoenix Down
+    Rare Drop/Steal: Dark Matter
+
+[07D/#125] DarkWizard
+       Common Steal: Poison Rod
+         Rare Steal: Judgement Staff
+    Rare Drop/Steal: Power Staff
+
+[07E/#126] AdamaGolem
+       Common Steal: Potion
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Hi-Potion
+
+[07F/#127] GreenDragn
+       Common Steal: Antidote
+         Rare Steal: Antidote
+    Rare Drop/Steal: Poison Axe
+
+[080/#128] Motordrive
+       Common Steal: Potion
+         Rare Steal: Beastkiller
+    Rare Drop/Steal: Hero Drink
+
+[081/#129] BlueDragon
+       Common Steal: Dragon Fang
+         Rare Steal: Cabin
+    Rare Drop/Steal: Dragon Fang
+
+[082/#130] Red Dragon
+       Common Steal: Hi-Potion
+         Rare Steal: Flame Ring
+    Rare Drop/Steal: Elixir
+
+[083/#131] Yellow Drgn
+       Common Steal: Thunder Rod
+         Rare Steal: Ether
+    Rare Drop/Steal: Coral Ring
+
+[084/#132] Sleepy
+       Common Steal: Healing Staff
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Leather Helmet
+
+[085/#133] Chariot
+       Common Steal: Doom Axe
+         Rare Steal: Black Cowl
+    Rare Drop/Steal: Bone Mail
+
+[086/#134] Lil'Chariot
+       Common Steal: Iron Shield
+    Rare Drop/Steal: Hi-Potion
+
+[087/#135] GreatMantis
+         Rare Steal: Impartisan
+
+[088/#136] Brachosaur
+         Rare Steal: Ribbon
+    Rare Drop/Steal: Gold Hairpin
+
+[089/#137] Sand Drake
+       Common Steal: Dragon Fang
+
+[08A/#138] Pao
+       Common Steal: Potion
+         Rare Steal: Hi-Potion
+        Common Drop: Tent
+
+[08B/#139] GoldKnight
+       Common Steal: Gold Helmet
+         Rare Steal: Gold Armor
+    Rare Drop/Steal: Gold Sword
+
+[08C/#140] Goldtrice
+       Common Steal: GoldNeedle
+         Rare Steal: Gold Ring
+    Rare Drop/Steal: Gold Sword
+
+[08D/#141] Gold Bear
+       Common Steal: Gold Shield
+         Rare Steal: Gold Shield
+    Rare Drop/Steal: Gold Sword
+
+[08E/#142] Desertpede
+       Common Steal: Potion
+         Rare Steal: Antidote
+    Rare Drop/Steal: Dark Matter
+
+[08F/#143] Griffon
+       Common Steal: Potion
+         Rare Steal: Wightslayer
+    Rare Drop/Steal: Hi-Potion
+
+[090/#144] Coeurl
+       Common Steal: Potion
+    Rare Drop/Steal: Whip
+
+[091/#145] Mummy
+       Common Steal: HolyWater
+         Rare Steal: HolyWater
+    Rare Drop/Steal: Hi-Potion
+
+[092/#146] Lilith
+       Common Steal: Maiden's Kiss
+         Rare Steal: Lilith Rod
+    Rare Drop/Steal: Lamia's Tiara
+
+[093/#147] Nile
+    Rare Drop/Steal: Protect Drink
+
+[094/#148] Sphinx
+       Common Steal: Maiden's Kiss
+         Rare Steal: Thornlet
+    Rare Drop/Steal: Staff of Light
+
+[095/#149] ZephyrZone
+       Common Steal: Potion
+         Rare Steal: Elixir
+    Rare Drop/Steal: Elixir
+
+[096/#150] ExdethSoul
+       Common Steal: Power Staff
+        Common Drop: Dark Matter
+
+[097/#151] Death Claw
+       Common Steal: Hero Drink
+         Rare Steal: Earth Hammer
+    Rare Drop/Steal: GoldNeedle
+
+[098/#152] GloomWidow
+       Common Steal: Potion
+         Rare Steal: Hi-Potion
+
+[099/#153] Pandora
+         Rare Steal: Enhancer
+        Common Drop: GoldNeedle
+
+[09A/#154] Executor
+         Rare Steal: Ether
+    Rare Drop/Steal: Diamond Armlet
+
+[09B/#155] BlackLizard
+       Common Steal: GoldNeedle
+         Rare Steal: Stoneblade
+    Rare Drop/Steal: GoldNeedle
+
+[09C/#156] Black Flan
+       Common Steal: Dark Matter
+    Rare Drop/Steal: Flame Scroll
+
+[09D/#157] Grenade
+       Common Steal: Hi-Potion
+         Rare Steal: Flame Shield
+    Rare Drop/Steal: Hi-Potion
+
+[09E/#158] Slownin
+       Common Steal: Osafune
+         Rare Steal: Murasame
+    Rare Drop/Steal: Kotetsu
+
+[09F/#159] Dobby
+         Rare Steal: Aviskiller
+    Rare Drop/Steal: Silver Bow
+
+[0A0/#160] Dim Master
+       Common Steal: Potion
+         Rare Steal: Healing Staff
+    Rare Drop/Steal: Hi-Potion
+
+[0A2/#162] Flare
+       Common Steal: Elixir
+         Rare Steal: Blitz Whip
+    Rare Drop/Steal: Magus Hat
+
+[0A3/#163] DuelKnight
+       Common Steal: Power Drink
+         Rare Steal: Flame Shield
+    Rare Drop/Steal: Power Drink
+
+[0A4/#164] Statue
+       Common Steal: Giant Drink
+         Rare Steal: Giant's Glove
+    Rare Drop/Steal: GoldNeedle
+
+[0A5/#165] Ninja
+       Common Steal: Ninja Suit
+         Rare Steal: Fuma Shuriken
+    Rare Drop/Steal: Black Cowl
+
+[0A7/#167] Druid
+       Common Steal: Potion
+         Rare Steal: Angel Ring
+    Rare Drop/Steal: Phoenix Down
+
+[0A8/#168] Iron Dress
+         Rare Steal: Protect Ring
+    Rare Drop/Steal: Tent
+
+[0A9/#169] Statue
+       Common Steal: Hi-Potion
+         Rare Steal: Double Lance
+    Rare Drop/Steal: GoldNeedle
+
+[0AA/#170] CentaurKnt
+         Rare Steal: Defender
+    Rare Drop/Steal: Silver Plate
+
+[0AB/#171] Cherry
+         Rare Steal: Rainbow Dress
+    Rare Drop/Steal: Ether
+
+[0AC/#172] Muud Suud
+         Rare Steal: Cursed Shield
+
+[0AD/#173] Red Mousse
+       Common Steal: Soot
+         Rare Steal: Flame Shield
+    Rare Drop/Steal: Flame Bow
+
+[0AE/#174] Flamehound
+       Common Steal: Flame Scroll
+    Rare Drop/Steal: Flame Rod
+
+[0AF/#175] Garm
+         Rare Steal: Beastkiller
+    Rare Drop/Steal: Flame Ring
+
+[0B0/#176] FlameKnght
+         Rare Steal: Flametongue
+
+[0B1/#177] Frostfly
+       Common Steal: Potion
+         Rare Steal: Ice Shield
+    Rare Drop/Steal: Frost Rod
+
+[0B2/#178] Thor
+       Common Steal: Ether
+         Rare Steal: Thor's Hammer
+
+[0B3/#179] Tonberry
+       Common Steal: Plumed Hat
+         Rare Steal: Elixir
+    Rare Drop/Steal: Mirage Vest
+
+[0B4/#180] HippoDemon
+       Common Steal: Cotton Robe
+         Rare Steal: Flame Ring
+    Rare Drop/Steal: Elixir
+
+[0B5/#181] Fall Guard
+       Common Steal: Bandana
+         Rare Steal: Hero Drink
+    Rare Drop/Steal: Kaiser Knuckles
+
+[0B6/#182] Alchymia
+       Common Steal: Maiden's Kiss
+         Rare Steal: Man-Eater
+    Rare Drop/Steal: Elixir
+
+[0B7/#183] ToadPrince
+       Common Steal: HolyWater
+         Rare Steal: Man-Eater
+    Rare Drop/Steal: Phoenix Down
+
+[0B8/#184] Frog Lord
+       Common Steal: Water Scroll
+         Rare Steal: Hero Drink
+    Rare Drop/Steal: Dark Matter
+
+[0B9/#185] Devil Crab
+       Common Steal: Protect Drink
+         Rare Steal: Protect Drink
+
+[0BA/#186] Coral
+       Common Steal: Coral Sword
+         Rare Steal: Coral Ring
+
+[0BB/#187] Karlabos
+         Rare Steal: Ice Shield
+    Rare Drop/Steal: Frost Bow
+
+[0BC/#188] Hammerhead
+       Common Steal: Power Drink
+         Rare Steal: Power Drink
+
+[0BD/#189] Triton
+       Common Steal: Iron Helmet
+         Rare Steal: Triton Hammer
+    Rare Drop/Steal: Orichalcum
+
+[0BE/#190] Anku Heggu
+       Common Steal: Potion
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Hi-Potion
+
+[0BF/#191] Ammona
+       Common Steal: Hi-Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: HolyWater
+
+[0C0/#192] Sandbiter
+       Common Steal: Dragon Fang
+    Rare Drop/Steal: Ancient Sword
+
+[0C1/#193] LimbrScylla
+         Rare Steal: Flame Ring
+    Rare Drop/Steal: Phoenix Down
+
+[0C2/#194] Brocrest
+         Rare Steal: Wall Ring
+    Rare Drop/Steal: Dark Matter
+
+[0C3/#195] Powasshi
+       Common Steal: HolyWater
+         Rare Steal: Rainbow Dress
+    Rare Drop/Steal: Red Slippers
+
+[0C5/#197] BeamCannon
+       Common Steal: Potion
+         Rare Steal: Ether
+    Rare Drop/Steal: Elixir
+
+[0C6/#198] Terminator
+       Common Steal: Mythril Glove
+         Rare Steal: Giant's Axe
+    Rare Drop/Steal: Iron Shield
+
+[0C7/#199] Iron Giant
+       Common Steal: Iron Helmet
+         Rare Steal: Iron Armor
+        Common Drop: Giant Drink
+
+[0C8/#200] MechDragon
+       Common Steal: Power Drink
+         Rare Steal: Defender
+    Rare Drop/Steal: Dragon Fang
+
+[0C9/#201] MasterDrgn
+       Common Steal: Gold Ring
+         Rare Steal: Crystal Helmet
+
+[0CA/#202] Pistachio
+       Common Steal: Copper Plate
+         Rare Steal: Silver Armlet
+
+[0CB/#203] Vilia
+       Common Steal: Blitz Whip
+         Rare Steal: Thorn Whip
+    Rare Drop/Steal: Thornlet
+
+[0CC/#204] GreatMalbo
+       Common Steal: Maiden's Kiss
+         Rare Steal: Elixir
+
+[0CD/#205] Azrael
+       Common Steal: Turtle Shell
+         Rare Steal: Black Cowl
+
+[0CE/#206] Hecatonche
+       Common Steal: Giant Drink
+         Rare Steal: Giant Drink
+    Rare Drop/Steal: Stoneblade
+
+[0CF/#207] Gold Baum
+       Common Steal: Phoenix Down
+         Rare Steal: Rainbow Hat
+
+[0D0/#208] Cenchos
+       Common Steal: Soot
+         Rare Steal: Icebrand
+    Rare Drop/Steal: Black Cowl
+
+[0D1/#209] Aeon
+         Rare Steal: Tempest Shield
+    Rare Drop/Steal: Bandana
+
+[0D2/#210] F.Enix
+       Common Steal: Phoenix Down
+         Rare Steal: Phoenix Down
+    Rare Drop/Steal: Judgement Staff
+
+[0D3/#211] MastrDobby
+       Common Steal: Killer Bow
+         Rare Steal: Artemis's Bow
+    Rare Drop/Steal: Potion
+
+[0D4/#212] Mover
+       Common Steal: Flame Scroll
+         Rare Steal: Water Scroll
+    Rare Drop/Steal: Thunder Scroll
+
+[0D5/#213] CrysDragon
+       Common Steal: Elixir
+         Rare Steal: Dragon Spear
+    Rare Drop/Steal: Crystal Armor
+
+[0D6/#214] Lunar Mage
+       Common Steal: Lamia's Harp
+         Rare Steal: Rune Bell
+    Rare Drop/Steal: White Robe
+
+[0D7/#215] Behemoth
+       Common Steal: Phoenix Down
+         Rare Steal: Blood Sword
+    Rare Drop/Steal: Double Lance
+
+[0D8/#216] Deathmask
+       Common Steal: Hi-Potion
+         Rare Steal: Elixir
+    Rare Drop/Steal: Glass Mask
+
+[0D9/#217] Sahagin
+       Common Steal: Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: Potion
+
+[0DA/#218] Th.Anemone
+        Common Drop: Thunder Scroll
+
+[0DB/#219] Sea Avis
+         Rare Steal: GoldNeedle
+    Rare Drop/Steal: GoldNeedle
+
+[0DC/#220] Corvette
+         Rare Steal: Trident
+    Rare Drop/Steal: Hi-Potion
+
+[0DD/#221] Merman
+       Common Steal: Partisan
+         Rare Steal: Imp's Armor
+    Rare Drop/Steal: Hi-Potion
+
+[0DE/#222] SeaScorpio
+       Common Steal: Antidote
+    Rare Drop/Steal: Potion
+
+[0DF/#223] Ice Lizard
+       Common Steal: GoldNeedle
+    Rare Drop/Steal: Frost Bow
+
+[0E0/#224] Frostbeast
+       Common Steal: Hi-Potion
+    Rare Drop/Steal: Frost Rod
+
+[0E1/#225] Piscodemon
+       Common Steal: Eyedrop
+    Rare Drop/Steal: Staff of Light
+
+[0E2/#226] SeaSerpent
+         Rare Steal: Dragon's Whisker
+    Rare Drop/Steal: Water Scroll
+
+[0E3/#227] Stingray
+       Common Steal: Dark Matter
+         Rare Steal: Rune Blade
+    Rare Drop/Steal: Dragon's Whisker
+
+[0E4/#228] MysterEgg
+         Rare Steal: Power Staff
+    Rare Drop/Steal: Kenpo Gi
+
+[0E5/#229] Golem
+       Common Steal: GoldNeedle
+        Common Drop: Golem
+
+[0E6/#230] Triceratop
+       Common Steal: Protect Drink
+         Rare Steal: Coral Ring
+
+[0E7/#231] Black Cat
+       Common Steal: Darkness Bow
+         Rare Steal: Black Robe
+    Rare Drop/Steal: Dark Matter
+
+[0E8/#232] Bonnacon
+       Common Steal: Hi-Potion
+
+[0E9/#233] Kaiser Ant
+         Rare Steal: Hero Drink
+    Rare Drop/Steal: Elixir
+
+[0EA/#234] Fell Knight
+       Common Steal: Protect Ring
+    Rare Drop/Steal: Aegis Shield
+
+[0EB/#235] Arachne
+       Common Steal: Angel Wings
+    Rare Drop/Steal: Power Staff
+
+[0EC/#236] Asura
+       Common Steal: Star Pendant
+    Rare Drop/Steal: Staff of Light
+
+[0ED/#237] ??? Clone
+       Common Steal: Hi-Potion
+
+[0EE/#238] LennaClone
+       Common Steal: Tent
+
+[0EF/#239] FarisClone
+       Common Steal: HolyWater
+
+[0F1/#241] DeathWardn
+       Common Steal: Potion
+         Rare Steal: Cursed Ring
+    Rare Drop/Steal: Tiger Mask
+
+[0F2/#242] Specter
+       Common Steal: Ether
+         Rare Steal: Cursed Shield
+    Rare Drop/Steal: GoldNeedle
+
+[0F3/#243] Bloodbones
+       Common Steal: Dagger
+         Rare Steal: Mage Masher
+
+[0F4/#244] Skuldier
+       Common Steal: HolyWater
+         Rare Steal: Great Sword
+    Rare Drop/Steal: Protect Drink
+
+[0F5/#245] Brainpan
+       Common Steal: Phoenix Down
+    Rare Drop/Steal: Phoenix Down
+
+[0F6/#246] Dark Force
+       Common Steal: Poison Rod
+         Rare Steal: Cursed Ring
+    Rare Drop/Steal: Black Robe
+
+[0F7/#247] Mystic
+       Common Steal: Moonring Blade
+         Rare Steal: Rising Sun
+    Rare Drop/Steal: Mirage Vest
+
+[0F8/#248] RubyTyrant
+       Common Steal: Shuriken
+         Rare Steal: Dancing Dagger
+    Rare Drop/Steal: Fuma Shuriken
+
+[0F9/#249] Blue Oni
+       Common Steal: Power Armlet
+         Rare Steal: Kaiser Knuckles
+    Rare Drop/Steal: Morning Star
+
+[0FA/#250] Red Oni
+       Common Steal: Power Sash
+         Rare Steal: Black Garb
+    Rare Drop/Steal: Heavy Lance
+
+[0FB/#251] Yojimbo
+       Common Steal: Cabin
+         Rare Steal: Murakumo
+    Rare Drop/Steal: Air Blade
+
+[0FD/#253] GluttonOgre
+       Common Steal: Star Pendant
+         Rare Steal: Angel Ring
+
+[0FE/#254] Kirin
+         Rare Steal: Elf Cape
+    Rare Drop/Steal: Aegis Shield
+
+[100/#256] WingRaptor
+       Common Steal: Potion
+        Common Drop: Phoenix Down
+
+[101/#257] WingRaptor
+       Common Steal: Potion
+        Common Drop: Phoenix Down
+
+[102/#258] Kraken
+       Common Steal: Leather Shoes
+         Rare Steal: Leather Clothes
+        Common Drop: Leather Helmet
+
+[103/#259] KaiserDrgn
+        Common Drop: Mu Fragment
+
+[104/#260] Siren
+        Common Drop: Bronze Armor
+
+[105/#261] Siren
+        Common Drop: Bronze Shield
+
+[106/#262] Scarmiglion
+       Common Steal: Hi-Potion
+        Common Drop: Power Drink
+
+[108/#264] Cagnazzo
+       Common Steal: Hi-Potion
+        Common Drop: Turtle Shell
+
+[109/#265] Cagnazzo
+       Common Steal: Trident
+        Common Drop: Protect Drink
+
+[10A/#266] Rubicante
+       Common Steal: Flame Scroll
+        Common Drop: Flame Bow
+
+[10B/#267] Rubicante
+        Common Drop: Flame Bow
+
+[10C/#268] Commander
+       Common Steal: Mythril Sword
+    Rare Drop/Steal: Long Sword
+
+[110/#272] 2-HeadDrgn
+       Common Steal: Power Drink
+        Common Drop: Dragon Fang
+
+[111/#273] Flamegun
+       Common Steal: Potion
+         Rare Steal: Ether
+        Common Drop: Speed Drink
+
+[112/#274] Rocket
+       Common Steal: Potion
+         Rare Steal: Ether
+        Common Drop: Protect Drink
+
+[113/#275] Ultros
+       Common Steal: Soot
+         Rare Steal: Dark Matter
+
+[114/#276] SoulCannon
+       Common Steal: Ether
+         Rare Steal: Elixir
+        Common Drop: Dark Matter
+
+[115/#277] ArchaeAvis
+       Common Steal: Giant Drink
+
+[116/#278] ArchaeAvis
+       Common Steal: Power Drink
+
+[117/#279] ArchaeAvis
+       Common Steal: Speed Drink
+
+[118/#280] ArchaeAvis
+       Common Steal: Protect Drink
+
+[119/#281] ArchaeAvis
+        Common Drop: Hero Drink
+
+[11A/#282] Echidna
+       Common Steal: GoldNeedle
+         Rare Steal: Lilith Rod
+        Common Drop: Speed Drink
+
+[11B/#283] FloatingEye
+       Common Steal: Phoenix Down
+    Rare Drop/Steal: Hero Drink
+
+[11C/#284] Mom Bomb
+       Common Steal: Flame Scroll
+
+[11D/#285] Enkidu
+         Rare Steal: Gaia Gear
+    Rare Drop/Steal: Orichalcum
+
+[11E/#286] Gilgamesh
+        Common Drop: Elixir
+
+[11F/#287] Peg Powler
+       Common Steal: Turtle Shell
+         Rare Steal: Imp's Armor
+    Rare Drop/Steal: Potion
+
+[120/#288] Humbaba
+       Common Steal: Thunder Scroll
+        Common Drop: Cabin
+
+[121/#289] Gabbldegak
+       Common Steal: Potion
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Phoenix Down
+
+[122/#290] Dullahan
+         Rare Steal: Elixir
+    Rare Drop/Steal: Ancient Sword
+
+[123/#291] Gilgamesh
+       Common Steal: Hero Drink
+         Rare Steal: Trident
+    Rare Drop/Steal: Tricorn
+
+[127/#295] DrgnFlower
+        Common Drop: Elixir
+
+[128/#296] Rafflesia
+    Rare Drop/Steal: Phoenix Down
+
+[129/#297] Mortblosom
+    Rare Drop/Steal: Phoenix Down
+
+[12A/#298] Goldor
+       Common Steal: Gold Sword
+        Common Drop: Gold Ring
+
+[12B/#299] Gil Turtle
+       Common Steal: Potion
+         Rare Steal: Hi-Potion
+
+[12D/#301] Gilgamesh
+       Common Steal: Genji Glove
+        Common Drop: Gold Shield
+
+[12E/#302] Enkidu
+       Common Steal: Green Beret
+        Common Drop: Trident
+
+[12F/#303] Atmos
+       Common Steal: Ether
+         Rare Steal: Flail
+        Common Drop: Dark Matter
+
+[130/#304] Rubicante
+       Common Steal: Phoenix Down
+         Rare Steal: Elixir
+    Rare Drop/Steal: Soot
+
+[131/#305] Scarmiglion
+       Common Steal: Phoenix Down
+         Rare Steal: Elixir
+    Rare Drop/Steal: Soot
+
+[132/#306] Cagnazzo
+       Common Steal: Phoenix Down
+         Rare Steal: Elixir
+    Rare Drop/Steal: Soot
+
+[133/#307] Barbaricia
+       Common Steal: Phoenix Down
+         Rare Steal: Elixir
+    Rare Drop/Steal: Soot
+
+[134/#308] Carbuncle
+       Common Steal: Wall Ring
+    Rare Drop/Steal: Turtle Shell
+
+[135/#309] Melusine
+       Common Steal: Leather Clothes
+         Rare Steal: Knife
+    Rare Drop/Steal: Maiden's Kiss
+
+[136/#310] Gilgamesh
+       Common Steal: Genji Helmet
+        Common Drop: Excalipoor
+
+[137/#311] Exdeath
+       Common Steal: Elixir
+         Rare Steal: Judgement Staff
+
+[138/#312] Deathgaze
+        Common Drop: Hero's Shield
+
+[139/#313] Pharaoh
+       Common Steal: HolyWater
+         Rare Steal: Elixir
+        Common Drop: HolyWater
+
+[13A/#314] Viper
+       Common Steal: Antidote
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Antidote
+
+[13B/#315] MachinHead
+       Common Steal: Ether
+         Rare Steal: Gauntlet
+    Rare Drop/Steal: Speed Drink
+
+[13C/#316] Wrexsoul
+         Rare Steal: Guard Ring
+
+[140/#320] Gel Matter
+    Rare Drop/Steal: Ether
+
+[141/#321] Gargoyle
+       Common Steal: Potion
+         Rare Steal: Phoenix Down
+    Rare Drop/Steal: Hi-Potion
+
+[142/#322] Sandy
+       Common Steal: Ether
+         Rare Steal: Elixir
+    Rare Drop/Steal: Luck Mallet
+
+[143/#323] Cindy
+       Common Steal: Ether
+         Rare Steal: Elixir
+    Rare Drop/Steal: Phoenix Down
+
+[144/#324] Mindy
+       Common Steal: Ether
+         Rare Steal: Elixir
+    Rare Drop/Steal: Maiden's Kiss
+
+[145/#325] Scylla
+         Rare Steal: Gold Hairpin
+
+[146/#326] Minotauros
+       Common Steal: Leather Shoes
+         Rare Steal: Fuma Shuriken
+
+[147/#327] Sekhmet
+       Common Steal: Hi-Potion
+         Rare Steal: Crystal Armor
+
+[148/#328] Pantera
+    Rare Drop/Steal: Dark Matter
+
+[149/#329] UltimaWeapn
+       Common Steal: Kaiser Knuckles
+    Rare Drop/Steal: Tiger Mask
+
+[14A/#330] Pantera
+       Common Steal: Phoenix Down
+         Rare Steal: Elixir
+
+[14B/#331] GalufClone
+       Common Steal: Giant's Glove
+         Rare Steal: Excalipoor
+        Common Drop: Power Drink
+
+[14C/#332] Ultimecia
+       Common Steal: Staff of Light
+         Rare Steal: Rainbow Hat
+    Rare Drop/Steal: Dark Matter
+
+[151/#337] Cerberus
+       Common Steal: Hero Drink
+    Rare Drop/Steal: Glasses
+
+[152/#338] Sergeant
+       Common Steal: Potion
+    Rare Drop/Steal: Eyedrop
+
+[153/#339] Cur Nakk
+       Common Steal: Potion
+    Rare Drop/Steal: Potion
+
+[154/#340] MysterEgg
+         Rare Steal: Power Staff
+    Rare Drop/Steal: Kenpo Gi
+
+[155/#341] LilMurderer
+       Common Steal: Knife
+         Rare Steal: Thief Glove
+    Rare Drop/Steal: Thief's Knife
+
+[156/#342] Astaroth
+       Common Steal: White Robe
+         Rare Steal: Ribbon
+
+[157/#343] Diabolos
+       Common Steal: Hero Drink
+         Rare Steal: Glass Mask
+
+[158/#344] Abaddon
+       Common Steal: Power Armlet
+         Rare Steal: Wightslayer
+        Common Drop: Phoenix Down
+
+[159/#345] Necron
+       Common Steal: Elixir
+         Rare Steal: Elixir
+        Common Drop: Dark Matter
+
+[15A/#346] Ozma
+       Common Steal: Angel Wings
+    Rare Drop/Steal: Dark Matter
+
+[15B/#347] Barbaricia
+       Common Steal: Ether
+        Common Drop: Elixir
+
+[15C/#348] Barbaricia
+       Common Steal: Wind Spear
+        Common Drop: Elixir
+
+[15D/#349] Gilgamesh
+       Common Steal: Hi-Potion
+         Rare Steal: Gauntlet
+
+[15F/#351] Ultros
+       Common Steal: Soot
+         Rare Steal: Turtle Shell
+
+[160/#352] Typhon
+       Common Steal: Soot
+         Rare Steal: Dagger
+
+[161/#353] Alte Roite
+       Common Steal: Healing Staff
+         Rare Steal: HolyWater
+
+[162/#354] DeathRider
+       Common Steal: Ice Shield
+         Rare Steal: Dragon Spear
+    Rare Drop/Steal: Elixir
+
+[164/#356] Still Life
+       Common Steal: Maiden's Kiss
+         Rare Steal: Elixir
+
+[165/#357] Trap Door
+       Common Steal: Potion
+         Rare Steal: Potion
+
+[166/#358] ChmraBrain
+       Common Steal: Dragon Fang
+         Rare Steal: Spear
+    Rare Drop/Steal: Phoenix Down
+
+[167/#359] Tyrasaurus
+       Common Steal: HolyWater
+         Rare Steal: Leather Shield
+    Rare Drop/Steal: Elixir
+
+[168/#360] 
+       Common Steal: Genji Armor
+
+[16B/#363] 
+       Common Steal: Beastkiller
+         Rare Steal: Artemis's Bow
+
+[16C/#364] 
+       Common Steal: Wightslayer
+         Rare Steal: Ragnarok
+
+[16D/#365] 
+       Common Steal: Man-Eater
+         Rare Steal: Kitchen Knife
+
+[16E/#366] 
+       Common Steal: Dragon's Whisker
+         Rare Steal: Dragon Spear
+
+[16F/#367] Exdeath
+       Common Steal: Thornlet
+         Rare Steal: Thorn Whip
+
+[170/#368] Chocobo
+         Rare Steal: Hi-Potion
+
+[173/#371] Shiva
+       Common Steal: Hi-Potion
+         Rare Steal: Phoenix Down
+        Common Drop: Frost Rod
+
+[174/#372] Ramuh
+       Common Steal: Thunder Scroll
+         Rare Steal: Wonder Wand
+        Common Drop: Thunder Rod
+
+[175/#373] Ifrit
+       Common Steal: Phoenix Down
+        Common Drop: Flame Scroll
+
+[176/#374] Titan
+       Common Steal: Potion
+         Rare Steal: Earth Hammer
+        Common Drop: Hi-Potion
+
+[177/#375] ????
+       Common Steal: Potion
+    Rare Drop/Steal: Potion
+
+[178/#376] Catoblepas
+       Common Steal: GoldNeedle
+         Rare Steal: GoldNeedle
+        Common Drop: Shoat
+
+[179/#377] Carbuncle
+       Common Steal: Wall Ring
+
+[17A/#378] Syldra
+       Common Steal: Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: Potion
+        Common Drop: Potion
+
+[17B/#379] Odin
+         Rare Steal: Guard Ring
+    Rare Drop/Steal: Flame Shield
+
+[17C/#380] Phoenix
+       Common Steal: Potion
+         Rare Steal: Potion
+    Rare Drop/Steal: Potion
+        Common Drop: Potion
+
+[17D/#381] Leviathan
+       Common Steal: Elixir
+        Common Drop: Wall Ring
+
+[17E/#382] Bahamut
+       Common Steal: Dragon Fang
+         Rare Steal: Dragon Fang
+    Rare Drop/Steal: Dragon Fang
+
+[17F/#383] FatChocobo
+         Rare Steal: Elixir
+
+[180/#384] Antlion
+       Common Steal: Hi-Potion
+        Common Drop: Cabin
+
+[181/#385] Antlion
+       Common Steal: Hi-Potion
+        Common Drop: Cabin
+
+[182/#386] 
+       Common Steal: Knife
+
+[183/#387] 
+       Common Steal: Leather Helmet
+
+[184/#388] 
+       Common Steal: Leather Clothes
+
+[185/#389] PlatinmToad
+    Rare Drop/Steal: Elixir
+
+[186/#390] Thor
+         Rare Steal: Hi-Potion
+    Rare Drop/Steal: Potion
+
+[187/#391] SoulCannon
+       Common Steal: Ether
+         Rare Steal: Guard Ring
+    Rare Drop/Steal: Hi-Potion
+
+[18A/#394] Glutturn
+         Rare Steal: Mirage Vest
+
+[18B/#395] Glutturn
+         Rare Steal: Coronet
+
+[18C/#396] Glutturn
+         Rare Steal: Thief Glove
+
+[18D/#397] Glutturn
+         Rare Steal: Angel Robe
+
+[18F/#399] XandeClone
+       Common Steal: Bone Mail
+         Rare Steal: Judgement Staff
+    Rare Drop/Steal: Ribbon
+
+[190/#400] OmegaWeapn
+         Rare Steal: Ultima Weapon
+        Common Drop: Omega Medal
+
+[191/#401] Gilgamesh
+       Common Steal: Genji Shield
+    Rare Drop/Steal: Anti-Magic Bow
+
+[192/#402] Punisher
+       Common Steal: Gold Ring
+         Rare Steal: Tinker Bell
+    Rare Drop/Steal: Gold Helmet
+
+[193/#403] FiendDragn
+       Common Steal: Dragon Fang
+         Rare Steal: Dragon's Whisker
+        Common Drop: Dragon Crest
+
+[194/#404] Balloon
+         Rare Steal: Antidote
+
+[195/#405] Purobolos
+         Rare Steal: Eyedrop
+
+[196/#406] KrileClone
+       Common Steal: Elven Bow
+         Rare Steal: Aviskiller
+
+[197/#407] DragnClone
+       Common Steal: Phoenix Down
+        Common Drop: Dragon Fang
+
+[198/#408] Aquagel
+       Common Steal: Water Scroll
+    Rare Drop/Steal: Protect Drink
+
+[199/#409] Ice Golem
+       Common Steal: Protect Drink
+         Rare Steal: Icebrand
+
+[19A/#410] Mutant
+         Rare Steal: Poison Axe
+
+[19B/#411] Mind Mist
+         Rare Steal: Air Knife
+
+[19C/#412] Ahriman
+       Common Steal: Hero Drink
+        Common Drop: Phoenix Down
+
+[19D/#413] Margarita
+       Common Steal: Lamia's Tiara
+
+[19E/#414] LarvaQueen
+         Rare Steal: Luminous Robe
+    Rare Drop/Steal: Angel Ring
+
+[19F/#415] Mom Bomb
+       Common Steal: Shuriken
+
+[1A0/#416] SkullDragon
+       Common Steal: Ether
+
+[1A1/#417] TeriblDrgn
+       Common Steal: Dragon Fang
+
+[1A2/#418] EarthDragn
+       Common Steal: Power Drink
+
+[1A3/#419] HolyDragon
+       Common Steal: Phoenix Down
+
+[1A4/#420] StormDragn
+       Common Steal: Speed Drink
+
+[1A6/#422] Ice Dragon
+       Common Steal: Frost Rod
+         Rare Steal: Crystal Armor
+
+[1A7/#423] LadyDragon
+       Common Steal: Maiden's Kiss
+
+[1AA/#426] Demon Wall
+       Common Steal: GoldNeedle
+         Rare Steal: GoldNeedle
+
+[1B2/#434] MalbMenace
+    Rare Drop/Steal: Maiden's Kiss
+
+[1B6/#438] Wrexsoul
+         Rare Steal: Guard Ring
+
+[1B7/#439] Beelzebub
+       Common Steal: Dark Matter
+         Rare Steal: Elixir
+    Rare Drop/Steal: Running Shoes
+
+[1B8/#440] Cerberus
+       Common Steal: Hero Drink
+    Rare Drop/Steal: Glasses
