@@ -74,10 +74,20 @@ FF5r Deep Clean Changes:
     ⦾ !Steal rate is seriously improved (by Gens)
     ⦾ Learning is always turned on, for all Jobs (by Gens)
 
-Optional patches, Double & Super:
----------------------------------
-    ⦾ Gil, Exp, and ABP increased by 100% from all monsters (by C-Cliff & clymax) 
+Optional Editions
+-----------------
+Double:
+    ⦾ Gil, Exp, and ABP increased by 100% from all monsters (by C-Cliff & clymax)
+
+Super: 
     ⦾ Change 3 of the Ability slots for all Jobs, not just hidden Job (by HatZen08)
+    ⦾ Item Ability is always available 
+    ⦾ Take care to give Freelancer an Ability before entering battle
+Super Special:
+    ⦾ Change 3 of the Ability slots for all Jobs, not just hidden Job (by HatZen08)
+    ⦾ Job Special Ability is always available
+    ⦾ Take care to give Freelancer an Ability before entering battle
+
 
 Optional patch for Re-equip:
 ----------------------------
