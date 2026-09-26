@@ -28,7 +28,7 @@ this would not be possible without it!
 
 Read much more about this project here:
 
-https://www.notion.so/xj4cks/GBA-Script-notes-mods-39ede0b6e7514b8892b6fccccb1c0208
+https://app.notion.com/p/xj4cks/FFV-GBA-Script-Port-39ede0b6e7514b8892b6fccccb1c0208
 
 
 -----------------------
